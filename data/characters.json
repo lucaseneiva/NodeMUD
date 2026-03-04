@@ -8,5 +8,10 @@
     "name": "Legolas",
     "passwordHash": "$2b$10$jAuMrqEjB0xqbyUPD3M2zOWAriun9o74yQv6ShNtDC6zlKqk4vxlq",
     "currentRoom": "start"
+  },
+  {
+    "name": "Haranir",
+    "passwordHash": "$2b$10$iMVuLv2W.ukZmwtaEOTK8OZZfWc14EpY8tBJjMGHCQc8MPbOAhbmy",
+    "currentRoom": "start"
   }
 ]
