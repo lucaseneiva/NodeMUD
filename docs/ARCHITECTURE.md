@@ -12,7 +12,7 @@
 | Testing     | Jest + ts-jest                   |
 | Lint        | ESLint + Prettier                |
 
-No web frameworks. No Socket.io. No REST API.
+1. [](https://)No web frameworks. No Socket.io. No REST API.
 
 Raw TCP protocol — natively compatible with telnet and `nc`.
 
