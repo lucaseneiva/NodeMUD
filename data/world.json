@@ -1,0 +1,27 @@
+[
+  {
+    "id": "start",
+    "title": "The Starting Chamber",
+    "description": "You find yourself in a small, dimly lit chamber carved from ancient stone. The air is cool and musty.",
+    "exits": {
+      "north": "hallway"
+    }
+  },
+  {
+    "id": "hallway",
+    "title": "Stone Hallway",
+    "description": "A long hallway stretches before you, with torches flickering on the walls.",
+    "exits": {
+      "south": "start",
+      "east": "armory"
+    }
+  },
+  {
+    "id": "armory",
+    "title": "The Old Armory",
+    "description": "Racks of rusted weapons line the walls. Most are beyond use, but a few remain intact.",
+    "exits": {
+      "west": "hallway"
+    }
+  }
+]

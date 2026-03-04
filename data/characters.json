@@ -1,0 +1,12 @@
+[
+  {
+    "name": "newuser",
+    "passwordHash": "$2b$10$rwNtOzNlXQ8lrL.NqSjR0uu/HnwP2w9keONXfZVkxWYrsIFZ.ZR0C",
+    "currentRoom": "start"
+  },
+  {
+    "name": "Legolas",
+    "passwordHash": "$2b$10$jAuMrqEjB0xqbyUPD3M2zOWAriun9o74yQv6ShNtDC6zlKqk4vxlq",
+    "currentRoom": "start"
+  }
+]
