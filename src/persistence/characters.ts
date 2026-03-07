@@ -11,12 +11,24 @@ export interface CharacterRepository {
   findAll(): Promise<Character[]>;
 }
 
+let characterCache: Character[] | null = null;
+
+// Exported for testing purposes if ever needed
+export function clearCharacterCache() {
+  characterCache = null;
+}
+
 async function loadCharacters(): Promise<Character[]> {
+  if (characterCache !== null) {
+    return characterCache;
+  }
   try {
     const data = await fs.readFile(CHARACTERS_FILE, "utf-8");
-    return JSON.parse(data);
+    characterCache = JSON.parse(data);
+    return characterCache!;
   } catch {
-    return [];
+    characterCache = [];
+    return characterCache;
   }
 }
 
