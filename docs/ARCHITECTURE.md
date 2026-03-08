@@ -9,7 +9,7 @@
 | Language    | TypeScript                       |
 | Network     | `net` module (raw TCP, built-in) |
 | Persistence | JSON files (characters + world)  |
-| Testing     | Jest + ts-jest                   |
+| Testing     | Vitest                           |
 | Lint        | ESLint + Prettier                |
 
 1. [](https://)No web frameworks. No Socket.io. No REST API.
@@ -226,11 +226,9 @@ The network layer is **not** unit tested. Integration is validated manually via 
   },
   "devDependencies": {
     "typescript": "^5.0.0",
-    "ts-jest": "^29.0.0",
-    "jest": "^29.0.0",
+    "vitest": "^3.0.0",
     "@types/node": "^20.0.0",
     "@types/bcrypt": "^5.0.0",
-    "@types/jest": "^29.0.0",
     "eslint": "^8.0.0"
   }
 }

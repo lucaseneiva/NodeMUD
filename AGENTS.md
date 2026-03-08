@@ -17,14 +17,14 @@ Welcome, agent. This document outlines the technical standards, architectural pa
 ## 2. Core Commands
 
 ### 2.1 Initialization & Build
-- `npm install` — Install dependencies (`bcrypt`, `jest`, `eslint`, etc.)
+- `npm install` — Install dependencies (`bcrypt`, `vitest`, `eslint`, etc.)
 - `npx tsc` — Compile TypeScript
 - `npx tsc --watch` — Type-check in watch mode
 
-### 2.2 Testing (Jest)
+### 2.2 Testing (Vitest)
 - `npm test` — Run all unit tests
-- `npx jest tests/auth.test.ts` — Run a single test file
-- `npx jest -t "should register"` — Run a specific test by name
+- `npx vitest run tests/auth.test.ts` — Run a single test file
+- `npx vitest run -t "should register"` — Run a specific test by name
 - `npm test -- --watch` — Watch mode for TDD
 
 ### 2.3 Quality Control

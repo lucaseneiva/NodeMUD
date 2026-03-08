@@ -1,9 +1,10 @@
 import { Character } from "../src/domain/types";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const mockFindByName = jest.fn();
-const mockSave = jest.fn();
+const mockFindByName = vi.fn();
+const mockSave = vi.fn();
 
-jest.mock("../src/persistence/characters", () => ({
+vi.mock("../src/persistence/characters", () => ({
   __esModule: true,
   default: {
     findByName: (...args: unknown[]) => mockFindByName(...args),
@@ -11,16 +12,17 @@ jest.mock("../src/persistence/characters", () => ({
   },
 }));
 
-jest.mock("bcrypt", () => ({
-  hash: jest.fn(),
-  compare: jest.fn(),
+vi.mock("bcrypt", () => ({
+  hash: vi.fn(),
+  compare: vi.fn(),
 }));
 
 import * as auth from "../src/domain/auth";
+import * as bcrypt from "bcrypt";
 
 describe("auth", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe("register", () => {
@@ -81,8 +83,7 @@ describe("auth", () => {
       };
       mockFindByName.mockResolvedValue(storedCharacter);
 
-      const bcrypt = require("bcrypt");
-      (bcrypt.compare as jest.Mock).mockResolvedValue(true);
+      vi.mocked(bcrypt.compare).mockResolvedValue(true);
 
       const result = await auth.login("player1", "password123");
 
@@ -111,8 +112,7 @@ describe("auth", () => {
       };
       mockFindByName.mockResolvedValue(storedCharacter);
 
-      const bcrypt = require("bcrypt");
-      (bcrypt.compare as jest.Mock).mockResolvedValue(false);
+      vi.mocked(bcrypt.compare).mockResolvedValue(false);
 
       const result = await auth.login("player1", "wrongpassword");
 

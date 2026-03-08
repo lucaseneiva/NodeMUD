@@ -1,14 +1,15 @@
 import { Character, Room, Player } from "../src/domain/types";
 import * as player from "../src/domain/player";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const createMockSocket = () => ({
-  write: jest.fn(),
-  end: jest.fn(),
-  on: jest.fn(),
-  removeListener: jest.fn(),
-  destroy: jest.fn(),
+  write: vi.fn(),
+  end: vi.fn(),
+  on: vi.fn(),
+  removeListener: vi.fn(),
+  destroy: vi.fn(),
   remoteAddress: "127.0.0.1",
-  setKeepAlive: jest.fn(),
+  setKeepAlive: vi.fn(),
 });
 
 describe("player", () => {
@@ -22,7 +23,7 @@ describe("player", () => {
       passwordHash: "$2b$10$hash",
       currentRoom: "start",
     };
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe("createPlayer", () => {

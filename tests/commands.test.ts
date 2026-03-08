@@ -1,21 +1,22 @@
 import { Player, Room, CommandResult } from "../src/domain/types";
 import * as commands from "../src/domain/commands";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const mockGetRoom = jest.fn();
-const mockGetExits = jest.fn();
-const mockMove = jest.fn();
-const mockSendMessage = jest.fn();
+const mockGetRoom = vi.fn();
+const mockGetExits = vi.fn();
+const mockMove = vi.fn();
+const mockSendMessage = vi.fn();
 
-jest.mock("../src/domain/world", () => ({
+vi.mock("../src/domain/world", () => ({
   getRoom: (...args: unknown[]) => mockGetRoom(...args),
   getExits: (...args: unknown[]) => mockGetExits(...args),
   move: (...args: unknown[]) => mockMove(...args),
 }));
 
-jest.mock("../src/domain/player", () => ({
+vi.mock("../src/domain/player", () => ({
   sendMessage: (...args: unknown[]) => mockSendMessage(...args),
-  getCurrentRoomId: jest.fn(),
-  setCurrentRoom: jest.fn(),
+  getCurrentRoomId: vi.fn(),
+  setCurrentRoom: vi.fn(),
 }));
 
 const createMockPlayer = (): Player => ({
@@ -26,13 +27,13 @@ const createMockPlayer = (): Player => ({
     currentRoom: "start",
   },
   socket: {
-    write: jest.fn(),
-    end: jest.fn(),
-    on: jest.fn(),
-    removeListener: jest.fn(),
-    destroy: jest.fn(),
+    write: vi.fn(),
+    end: vi.fn(),
+    on: vi.fn(),
+    removeListener: vi.fn(),
+    destroy: vi.fn(),
     remoteAddress: "127.0.0.1",
-    setKeepAlive: jest.fn(),
+    setKeepAlive: vi.fn(),
   } as any,
 });
 
@@ -41,7 +42,7 @@ describe("commands", () => {
 
   beforeEach(() => {
     mockPlayer = createMockPlayer();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe("parseCommand", () => {

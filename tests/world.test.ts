@@ -1,11 +1,12 @@
 import { Room, Direction, MoveResult } from "../src/domain/types";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mockWorldRepo = {
-  findRoomById: jest.fn(),
-  findAllRooms: jest.fn(),
+  findRoomById: vi.fn(),
+  findAllRooms: vi.fn(),
 };
 
-jest.mock("../src/persistence/world", () => ({
+vi.mock("../src/persistence/world", () => ({
   __esModule: true,
   default: {
     findRoomById: (...args: unknown[]) => mockWorldRepo.findRoomById(...args),
@@ -38,7 +39,7 @@ const armoryRoom: Room = {
 
 describe("world", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe("getRoom", () => {
