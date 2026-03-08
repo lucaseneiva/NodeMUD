@@ -1,5 +1,5 @@
 {
-  "name": "meu-mud",
+  "name": "nodemud",
   "version": "1.0.0",
   "description": "Text-based Multi-User Dungeon",
   "main": "dist/server.js",

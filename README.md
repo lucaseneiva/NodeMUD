@@ -1,10 +1,10 @@
-# Meu-MUD
+# NodeMUD
 
 A text-based Multi-User Dungeon (MUD) built on raw TCP.
 
 ## Overview
 
-Meu-MUD is a classic MUD game server that accepts connections via telnet/netcat. Players can create characters, explore rooms, move between locations, and chat with other players in the same room.
+NodeMUD is a classic MUD game server that accepts connections via telnet/netcat. Players can create characters, explore rooms, move between locations, and chat with other players in the same room.
 
 ## Quick Start
 

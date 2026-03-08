@@ -1,12 +1,12 @@
-# AGENTS.md — Agentic Development Guidelines for Meu-MUD
+# AGENTS.md — Agentic Development Guidelines for NodeMUD
 
-Welcome, agent. This document outlines the technical standards, architectural patterns, and development workflows for the `meu-mud` project. Adhere strictly to these guidelines.
+Welcome, agent. This document outlines the technical standards, architectural patterns, and development workflows for the `NodeMUD` project. Adhere strictly to these guidelines.
 
 ---
 
 ## 1. Project Context
 
-`meu-mud` is a text-based Multi-User Dungeon (MUD) built on raw TCP.
+`NodeMUD` is a text-based Multi-User Dungeon (MUD) built on raw TCP.
 - **Runtime**: Node.js (v20+)
 - **Language**: TypeScript (Strict)
 - **Networking**: `net` module (Raw TCP, telnet/nc compatible)
